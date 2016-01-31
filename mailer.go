@@ -45,12 +45,6 @@ func MailSiteDown(site Site) {
 
 func readConfig() *emailConfig {
 
-	// smtpHost := "smtp.gmail.com"
-	// smtpPort := 465
-	// smtpPass := "6IdFxpAmTL9V"
-	// smtpUser := "rhflow.mailer"
-	//emailConf := &emailConfig{smtpUser, smtpPass, smtpHost, smtpPort}
-
 	b, err := ioutil.ReadFile(config)
 	if err != nil {
 		log.Panicf("Conf %s not found. (%s)", config, err)
