@@ -7,10 +7,7 @@ import (
 )
 
 func main() {
-	urls := []Site{
-		{Url: "http://flechtie.de", Title: "Flechtie"},
-		{Url: "http://blog.rh-flow.de", Title: "bleibt neugierig"},
-	}
+	urls := ReadHosts()
 	ch := make(chan bool)
 	var wg sync.WaitGroup
 	//fmt.Println("Start running")

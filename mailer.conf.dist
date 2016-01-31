@@ -1,0 +1,8 @@
+{
+"host" : "smtp.???",
+"port" : ???,
+"password" : "???",
+"username" : "???",
+"sender" : "your@email.tld",
+"receivers" : ["admin@email.tld"]
+}
