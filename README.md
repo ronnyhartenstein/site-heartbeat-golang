@@ -22,6 +22,12 @@ go get github.com/ronnyhartenstein/site-heartbeat-golang
 go build github.com/ronnyhartenstein/site-heartbeat-golang
 ```
 
+Build for other target platform:
+
+```
+env GOOS=linux GOARCH=386 go build github.com/ronnyhartenstein/site-heartbeat-golang
+```
+
 ## Configs
 
 `hosts.txt`: List of domains and their title (regexp) -> see `hosts.txt.dist` as template
