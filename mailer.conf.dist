@@ -4,5 +4,5 @@
 "password" : "???",
 "username" : "???",
 "sender" : "your@email.tld",
-"receivers" : ["admin@email.tld"]
+"receiver" : "admin@email.tld"
 }
