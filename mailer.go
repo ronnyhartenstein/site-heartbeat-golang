@@ -33,7 +33,7 @@ func MailSiteDown(site Site) {
 	from := mail.Address{"", conf.Sender}
 	to := mail.Address{"", conf.Receiver}
 	subj := fmt.Sprintf("Site %s is down", site.Url)
-	body := fmt.Sprintf("Site %s should contain '%s' in title but doesn't!", site.Title)
+	body := fmt.Sprintf("Site %s should contain '%s' in title but doesn't!", site.Url, site.Title)
 
 	// Setup headers
 	headers := make(map[string]string)
@@ -59,7 +59,12 @@ func MailSiteDown(site Site) {
 		ServerName:         conf.Host,
 	}
 
-	log.Printf("Send mail for %s ..", site)
+	//log.Printf("Send mail for %s ..", site)
+
+	if conf.Port != 465 {
+		log.Print("Mailing only implemented and tested for TLS over Port 465 (e.g. Gmail)")
+		return
+	}
 
 	doRawTLSConn(servername, tlsconfig, auth, from, to, message)
 }
@@ -128,7 +133,7 @@ func readConfig() *emailConfig {
 	if err != nil {
 		log.Panicf("Conf %s corrupt. (%s)", config, err)
 	}
-	log.Printf("Mailer conf: %s", conf)
+	//log.Printf("Mailer conf: %s", conf)
 
 	return &conf
 }

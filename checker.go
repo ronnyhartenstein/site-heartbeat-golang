@@ -4,7 +4,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"log"
 	"regexp"
-	"time"
+	//"time"
 )
 
 // Site meta data
@@ -22,10 +22,10 @@ func Check(site Site) bool {
 		}
 	}()
 
-	log.Printf("Check %s ..\n", site.Url)
-	start := time.Now()
+	//log.Printf("Check %s ..\n", site.Url)
+	//start := time.Now()
 	doc, err := goquery.NewDocument(site.Url)
-	runtime := time.Since(start).Seconds()
+	//runtime := time.Since(start).Seconds()
 	if err != nil {
 		log.Print(err)
 		return false
@@ -38,7 +38,7 @@ func Check(site Site) bool {
 		MailSiteDown(site)
 		return false
 	} else {
-		log.Printf("%s finished in %2fs, has Title '%s', must contain '%s' .. GOOD!\n", site.Url, runtime, title, site.Title)
+		//log.Printf("%s finished in %2fs, has Title '%s', must contain '%s' .. GOOD!\n", site.Url, runtime, title, site.Title)
 		return true
 	}
 }
