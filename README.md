@@ -32,7 +32,7 @@ env GOOS=linux GOARCH=386 go build github.com/ronnyhartenstein/site-heartbeat-go
 
 `hosts.txt`: List of domains and their title (regexp) -> see `hosts.txt.dist` as template
 
-`mailer.conf`: Mailer config to send the "Site down" mails (yet not configurable)
+`mailer.conf`: Mailer config to send the "Site down" mails (yet not configurable) -> see `mailer.conf.dist` as template
 
 ## Run
 
