@@ -34,7 +34,7 @@ func Check(site Site) bool {
 	title := doc.Find("title").Text()
 	matched, err := regexp.MatchString(site.Title, title)
 	if !matched {
-		log.Printf("Title for %s is '%s', but should '%s'\n", site.Url, title, site.Title)
+		//log.Printf("Title for %s is '%s', but should '%s'\n", site.Url, title, site.Title)
 		MailSiteDown(site)
 		return false
 	} else {
