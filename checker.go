@@ -18,6 +18,7 @@ func Check(site Site) bool {
 	// recover on e.g. "x509: certificate is valid errors"
 	defer func() {
 		if p := recover(); p != nil {
+			MailSiteDown(site)
 			log.Printf("internal error: %v", p)
 		}
 	}()
@@ -27,6 +28,7 @@ func Check(site Site) bool {
 	doc, err := goquery.NewDocument(site.Url)
 	//runtime := time.Since(start).Seconds()
 	if err != nil {
+		MailSiteDown(site)
 		log.Print(err)
 		return false
 	}
