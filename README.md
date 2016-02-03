@@ -2,6 +2,8 @@
 
 Checks for a bunch of domains their `<title>`.
 
+Project for blog post [Coding Kata: Site Heartbeat in Elixir and Golang](http://blog.rh-flow.de/2016/02/02/coding-kata-site-heartbeat-in-elixir-and-golang/).
+
 Uses:
 - [Goquery](https://github.com/PuerkitoBio/goquery)
 
